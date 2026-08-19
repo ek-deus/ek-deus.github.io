@@ -1,0 +1,43 @@
+---
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const published = post.data.pubDate.toLocaleDateString('ru-RU', {
+  day: 'numeric', month: 'long', year: 'numeric',
+});
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content={post.data.description}>
+    <title>{post.data.title} · Евгений К.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body class="post-page">
+    <main class="post-shell">
+      <a class="back-link" href="/#articles">← Все публикации</a>
+      <article class="post">
+        <p class="section-number">{published} / DevOps</p>
+        <h1>{post.data.title}</h1>
+        <p class="post-description">{post.data.description}</p>
+        {post.data.youtubeId && (
+          <div class="video"><iframe src={`https://www.youtube-nocookie.com/embed/${post.data.youtubeId}`} title={post.data.title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        )}
+        <div class="prose"><Content /></div>
+      </article>
+      <footer><span>© 2026 Евгений К.</span><a href="/">ek-deus.github.io</a></footer>
+    </main>
+  </body>
+</html>
