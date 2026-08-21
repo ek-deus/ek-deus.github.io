@@ -1,0 +1,59 @@
+---
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Блог Евгения К. о DevOps, инфраструктуре и инженерных практиках.">
+    <title>Блог · Евгений К.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body class="blog-page">
+    <main class="blog-shell">
+      <header class="blog-header">
+        <a class="back-link" href="/">← На главную</a>
+        <p class="section-number">Блог / DevOps</p>
+        <h1>Заметки<br><em>и разборы.</em></h1>
+        <p>Практический опыт, инструменты и наблюдения о надёжной инфраструктуре.</p>
+      </header>
+
+      <section class="blog-grid" aria-label="Публикации">
+        {posts.map((post) => {
+          const postUrl = `/blog/${post.id.replace(/\.md$/, '')}/`;
+          const published = post.data.pubDate.toLocaleDateString('ru-RU', {
+            day: 'numeric', month: 'long', year: 'numeric',
+          });
+          const image = post.data.youtubeId
+            ? `https://i.ytimg.com/vi/${post.data.youtubeId}/hqdefault.jpg`
+            : undefined;
+
+          return (
+            <article class="blog-card">
+              <a class="blog-card-image" href={postUrl} aria-label={`Открыть: ${post.data.title}`}>
+                {image ? <img src={image} alt="" loading="lazy" /> : <span>DEV<br />OPS</span>}
+              </a>
+              <div class="blog-card-body">
+                <time datetime={post.data.pubDate.toISOString()}>{published}</time>
+                <h2><a href={postUrl}>{post.data.title}</a></h2>
+                <p>{post.data.description}</p>
+                <a class="read-more" href={postUrl}>Читать дальше <span>→</span></a>
+              </div>
+            </article>
+          );
+        })}
+      </section>
+
+      <footer><span>© 2026 Евгений К.</span><a href="/">ek-deus.github.io</a></footer>
+    </main>
+  </body>
+</html>
