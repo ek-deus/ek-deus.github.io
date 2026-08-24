@@ -2,11 +2,12 @@
 title: 'Сигналы SIGTERM vs SIGINT vs SIGKILL — как процесс реагирует, как корректно остановить, когда kill -9'
 description: 'SIGTERM vs SIGINT vs SIGKILL'
 pubDate: '2026-06-22'
+tags: ['linux', 'DevOps', 'sobes', 'SIGTERM', 'SIGINT','SIGKILL']
 heroImage: ''
 ---
-#DevOps #sobes
-#linux #sigterm #sigint #sigkill #kill-9
+# DevOps #sobes
 
+# linux #sigterm #sigint #sigkill #kill-9
 
 Краткий ответ
 
@@ -22,7 +23,6 @@ SIGTERM (15) — запрос на завершение; процесс може
 |SIGCONT|18|Да|Возобновление после SIGSTOP|
 
 **Корректная остановка:**
-
 
 ```
 kill -15 <pid>          # SIGTERM — процесс флашит буферы, закрывает соединения

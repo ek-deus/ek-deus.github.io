@@ -2,10 +2,11 @@
 title: 'systemd что происходит при загрузке Linux от кнопки питания до login, что такое unit как поднять node_exporter как сервис и снять метрики?'
 description: 'что происходит при загрузке Linux'
 pubDate: '2026-06-22'
+tags: ['linux', 'DevOps', 'sobes', 'systemd']
 heroImage: ''
 ---
-#DevOps #sobes
-#linux #systemd #node_exporter #login #metric #unit 
+# DevOps #sobes
+# linux #systemd #node_exporter #login #metric #unit
 
 Краткий ответ
 
@@ -37,7 +38,6 @@ User=node_exporter
 [Install]
 WantedBy=multi-user.target
 ```
-
 
 ```bash
 systemctl daemon-reload

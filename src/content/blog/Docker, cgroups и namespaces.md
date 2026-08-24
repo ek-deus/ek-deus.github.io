@@ -2,11 +2,13 @@
 title: 'Docker, cgroups и namespaces.md'
 description: 'Docker, cgroups и namespaces.md'
 pubDate: '2026-06-22'
+tags: ['linux', 'DevOps', 'Docker', 'cgroup', 'namespace']
 heroImage: ''
 ---
 
  #DevOps #sobes
-#linux #docker #cgroup #namespace
+
+# linux #docker #cgroup #namespace
 
 Краткий ответ
 

@@ -2,17 +2,17 @@
 title: 'Права в Linux: как выдавать (chmod/chown), чем отличается симлинк от хардлинка, что такое inode?'
 description: 'Права в Linux: как выдавать (chmod/chown)'
 pubDate: '2026-06-22'
+tags: ['linux', 'DevOps', 'sobes']
 heroImage: ''
 ---
 
-#DevOps #sobes
-#linux #chmod #chown #simlink #hardlink
+# DevOps #sobes
 
+# linux #chmod #chown #simlink #hardlink
 
 Краткий ответ
 
 `chmod` меняет маску прав (rwx для user/group/other), `chown` — владельца и группу. Хардлинк — ещё одна ссылка на тот же inode (одни данные, два имени); удаление одного имени не удаляет файл. Симлинк — отдельный файл, хранящий путь к цели; если цель удалена — симлинк «битый».
-
 
 **chmod** принимает восьмеричную (`chmod 755 file`) или символьную (`chmod u+x,g-w file`) нотацию. Биты: r=4, w=2, x=1. Специальные биты: setuid (4000), setgid (2000), sticky (1000). Для директорий `x` = право на вход (traverse).
 
