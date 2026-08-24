@@ -1,0 +1,30 @@
+/* Увеличенные подписи и навигация на главной странице */
+.sidebar .eyebrow,
+.hero .section-number {
+  font-size: 12px;
+}
+
+.sidebar .role {
+  font-size: 15px;
+}
+
+.sidebar nav a {
+  padding: 9px 0;
+  font-size: 15px;
+}
+
+.sidebar nav a span {
+  font-size: 11px;
+}
+
+.sidebar-bottom {
+  font-size: 13px;
+}
+
+.sidebar .socials {
+  gap: 12px;
+}
+
+.hero .availability {
+  font-size: 13px;
+}
