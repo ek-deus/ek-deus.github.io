@@ -32,6 +32,7 @@ const published = post.data.pubDate.toLocaleDateString('ru-RU', {
         <p class="section-number">{published} / DevOps</p>
         <h1>{post.data.title}</h1>
         <p class="post-description">{post.data.description}</p>
+        {post.data.tags.length > 0 && <div class="post-tags post-tags--article">{post.data.tags.map((tag) => <a href={`/blog/#tag-${encodeURIComponent(tag)}`}>{tag}</a>)}</div>}
         {post.data.youtubeId && (
           <div class="video"><iframe src={`https://www.youtube-nocookie.com/embed/${post.data.youtubeId}`} title={post.data.title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
         )}

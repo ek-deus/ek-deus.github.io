@@ -4,6 +4,7 @@ import { getCollection } from 'astro:content';
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+const tags = [...new Set(posts.flatMap((post) => post.data.tags))].sort((a, b) => a.localeCompare(b, 'ru'));
 ---
 
 <!doctype html>
@@ -27,6 +28,14 @@ const posts = (await getCollection('blog')).sort(
         <p>Практический опыт, инструменты и наблюдения о надёжной инфраструктуре.</p>
       </header>
 
+      <div class="tag-filter" aria-label="Фильтр публикаций по тегам">
+        <span class="tag-filter-label">Темы</span>
+        <div class="tag-filter-buttons">
+          <button class="tag-filter-button is-active" type="button" data-tag="all" aria-pressed="true">Все</button>
+          {tags.map((tag) => <button class="tag-filter-button" type="button" data-tag={tag} aria-pressed="false">{tag}</button>)}
+        </div>
+      </div>
+
       <section class="blog-grid" aria-label="Публикации">
         {posts.map((post) => {
           const postUrl = `/blog/${post.id.replace(/\.md$/, '')}/`;
@@ -38,7 +47,7 @@ const posts = (await getCollection('blog')).sort(
             : undefined;
 
           return (
-            <article class="blog-card">
+            <article class="blog-card" data-tags={post.data.tags.join('|')}>
               <a class="blog-card-image" href={postUrl} aria-label={`Открыть: ${post.data.title}`}>
                 {image ? <img src={image} alt="" loading="lazy" /> : <span>DEV<br />OPS</span>}
               </a>
@@ -46,14 +55,53 @@ const posts = (await getCollection('blog')).sort(
                 <time datetime={post.data.pubDate.toISOString()}>{published}</time>
                 <h2><a href={postUrl}>{post.data.title}</a></h2>
                 <p>{post.data.description}</p>
+                {post.data.tags.length > 0 && <div class="post-tags">{post.data.tags.map((tag) => <span>{tag}</span>)}</div>}
                 <a class="read-more" href={postUrl}>Читать дальше <span>→</span></a>
               </div>
             </article>
           );
         })}
       </section>
+      <p class="filter-empty" hidden>По выбранным тегам публикаций пока нет.</p>
 
       <footer><span>© 2026 Евгений К.</span><a href="/">ek-deus.github.io</a></footer>
     </main>
+    <script>
+      const buttons = Array.from(document.querySelectorAll('.tag-filter-button'));
+      const cards = Array.from(document.querySelectorAll('.blog-card'));
+      const empty = document.querySelector('.filter-empty');
+      const selected = new Set();
+
+      if (location.hash.startsWith('#tag-')) {
+        const tagFromHash = decodeURIComponent(location.hash.slice(5));
+        if (buttons.some((button) => button.dataset.tag === tagFromHash)) selected.add(tagFromHash);
+      }
+
+      function updateFilter() {
+        const activeTags = [...selected];
+        let visible = 0;
+        cards.forEach((card) => {
+          const cardTags = (card.dataset.tags || '').split('|').filter(Boolean);
+          const show = activeTags.length === 0 || activeTags.every((tag) => cardTags.includes(tag));
+          card.hidden = !show;
+          if (show) visible += 1;
+        });
+        empty.hidden = visible !== 0;
+        buttons.forEach((button) => {
+          const all = button.dataset.tag === 'all';
+          const active = all ? activeTags.length === 0 : selected.has(button.dataset.tag);
+          button.classList.toggle('is-active', active);
+          button.setAttribute('aria-pressed', String(active));
+        });
+      }
+
+      buttons.forEach((button) => button.addEventListener('click', () => {
+        const tag = button.dataset.tag;
+        if (tag === 'all') selected.clear();
+        else selected.has(tag) ? selected.delete(tag) : selected.add(tag);
+        updateFilter();
+      }));
+      updateFilter();
+    </script>
   </body>
 </html>
