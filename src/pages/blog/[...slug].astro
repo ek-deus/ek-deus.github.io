@@ -40,5 +40,13 @@ const published = post.data.pubDate.toLocaleDateString('ru-RU', {
       </article>
       <footer><span>© 2026 Евгений К.</span><a href="/">ek-deus.github.io</a></footer>
     </main>
+    <script>
+      document.querySelectorAll('.prose table').forEach((table) => {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'table-scroll';
+        table.before(wrapper);
+        wrapper.append(table);
+      });
+    </script>
   </body>
 </html>
