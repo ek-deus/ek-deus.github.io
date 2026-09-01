@@ -1,6 +1,6 @@
 ---
 title: 'Аварийное восстановление etcd-кластера Kubernetes'
-description: 'SIGTERM vs SIGINT vs SIGKILL'
+description: 'Аварийное восстановление etcd-кластера'
 pubDate: '2026-06-22'
 tags: ['linux', 'DevOps', 'sobes', 'etcd', 'k8s','kubernetes']
 heroImage: ''
