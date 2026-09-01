@@ -7,7 +7,7 @@ heroImage: ''
 ---
 
 
-# `import_tasks` vs `include_tasks` в Ansible
+# import_tasks vs `nclude_tasks в Ansible
 
 ## Ключевое различие
 
