@@ -1,0 +1,27 @@
+---
+const skillGroups = [
+  ['Infrastructure & Cloud', 'Kubernetes', 'Terraform', 'Ansible', 'Yandex Cloud', 'AWS', 'Linux', 'SSH'],
+  ['CI/CD & Delivery', 'GitLab CI', 'Jenkins', 'TeamCity', 'Git', 'Helm', 'Argo CD', 'Werf', 'Nexus', 'JFrog Artifactory'],
+  ['Platforms & Runtime', 'Docker', 'OpenShift', 'Docker Swarm', 'Proxmox', 'VMware', 'Citrix', 'Hyper-V'],
+  ['Data & Observability', 'Prometheus', 'Grafana', 'ELK Stack', 'Zabbix', 'PostgreSQL', 'Tarantool', 'RabbitMQ', 'Kafka'],
+];
+const responsibilities = ['Создание и поддержка Infrastructure as Code с Terraform и Ansible.','Проектирование, настройка и сопровождение CI/CD-процессов на Jenkins и GitLab CI.','Развёртывание и эксплуатация контейнеризированных приложений в Kubernetes и OpenShift.','Внедрение мониторинга, алертинга и наблюдаемости на базе Prometheus, Grafana, ELK и Zabbix.','Автоматизация операционных задач, подготовка технической документации и runbook-инструкций.'];
+const focus = ['Внедрение и развитие DevOps-практик в командах и направлениях.','Масштабирование серверной инфраструктуры и повышение её отказоустойчивости.','Построение безопасных и воспроизводимых процессов поставки.','Обучение команд инструментам и практикам DevOps.'];
+---
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Резюме Евгения Киселёва — DevOps Engineer.">
+  <title>Евгений Киселёв · DevOps Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/styles.css">
+</head>
+<body class="resume-page"><main class="resume-shell">
+  <a class="back-link" href="/">← На главную</a>
+  <header class="resume-header"><p class="section-number">Резюме / DevOps Engineer</p><h1>Евгений<br><em>Киселёв</em></h1><p class="resume-lead">DevOps-инженер с практическим опытом построения, автоматизации и развития production-инфраструктуры. Работаю на стыке платформенной инженерии, CI/CD, Kubernetes и облачных сервисов — от архитектуры до устойчивой ежедневной эксплуатации.</p><div class="resume-contacts"><a href="mailto:ekdeus@yandex.ru">ekdeus@yandex.ru ↗</a><a href="https://github.com/ek-deus" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://t.me/DevOps_DIY" target="_blank" rel="noreferrer">Telegram ↗</a></div></header>
+  <section class="resume-section resume-summary"><p class="section-number">01 / Профиль</p><div><h2>Инфраструктура, которая помогает продукту развиваться.</h2><p>Проектирую и поддерживаю инфраструктурные платформы: описываю окружения как код, автоматизирую поставку, создаю понятные процессы эксплуатации и наблюдаемости. Умею соединять требования разработки, эксплуатации и информационной безопасности в работающую систему.</p><p>Сильные стороны — системное мышление, глубокая практическая экспертиза в Linux и сетях, внимание к надёжности и способность доводить изменения до воспроизводимого результата.</p></div></section>
+  <section class="resume-section"><div class="resume-section-heading"><p class="section-number">02 / Компетенции</p><h2>Рабочий стек</h2></div><div class="skill-groups">{skillGroups.map(([title, ...skills]) => <article><h3>{title}</h3><div class="skill-tags">{skills.map((skill) => <span>{skill}</span>)}</div></article>)}</div></section>
+  <section class="resume-section resume-work"><div class="resume-section-heading"><p class="section-number">03 / Практика</p><h2>Что делаю</h2></div><div class="resume-columns"><article><h3>Зоны ответственности</h3><ul>{responsibilities.map((item) => <li>{item}</li>)}</ul></article><article><h3>Фокус работы</h3><ul>{focus.map((item) => <li>{item}</li>)}</ul></article></div></section>
+  <section class="resume-section resume-tools"><div class="resume-section-heading"><p class="section-number">04 / Технологии</p><h2>Детали</h2></div><dl><div><dt>Методологии</dt><dd>Agile · Kanban · DevSecOps</dd></div><div><dt>Оркестрация</dt><dd>Kubernetes · OpenShift · Docker Swarm · Helm · Argo CD</dd></div><div><dt>Автоматизация</dt><dd>Terraform · Ansible · Python · Bash</dd></div><div><dt>Сети и безопасность</dt><dd>MikroTik · MTCNA · SSH · внедрение систем информационной безопасности</dd></div><div><dt>Коллаборация</dt><dd>Jira · Yandex Tracker · Confluence · Notion</dd></div></dl></section>
+  <section class="resume-section resume-languages"><p class="section-number">05 / Языки и сертификация</p><div><p><strong>Русский</strong><span>Родной</span></p><p><strong>Английский</strong><span>A2 · Elementary</span></p><p><strong>MTCNA</strong><span>MikroTik Certified Network Associate</span></p></div></section>
+  <footer><span>© 2026 Евгений Киселёв</span><span>Resume draft</span></footer>
+</main></body></html>
