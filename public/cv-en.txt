@@ -1,0 +1,71 @@
+Kiselev Evgeny Aleksandrovich
+DevOps Engineer / Lead DevOps Engineer
+Moscow · ekdeus@yandex.ru · github.com/ek-deus · t.me/DevOps_DIY
+
+SUMMARY
+DevOps Engineer / Tech Lead with 15+ years in IT. Started as a system administrator and grew into a DevOps engineer and architect. I help teams transition from classical development to DevOps culture: automating everything possible, implementing observability, and making infrastructure resilient.
+Hands-on experience: Infrastructure as Code (Terraform, Ansible), CI/CD (Jenkins, GitLab CI, TeamCity), Kubernetes / OpenShift, monitoring (Prometheus, Grafana, ELK, Zabbix), virtualization (VMware, Proxmox, Citrix, Hyper-V), Cloud (Yandex Cloud, VTBCloud, AWS).
+Not afraid of challenges: production incidents at 3 AM (and preventing them) are routine for me — a routine I aim to minimize through automation and observability.
+I run the Telegram channel DevOps_DIY and a YouTube channel about IT trends, open-source, and practical cases.
+
+SKILLS
+Cloud: Yandex Cloud, VTBCloud, AWS
+IaC & Automation: Terraform, Ansible, Helm, Werf
+Containers & Orchestration: Docker, Kubernetes, OpenShift, Docker Swarm, ArgoCD
+CI/CD: Jenkins, GitLab CI/CD, TeamCity
+Observability: Prometheus + Grafana, ELK, Zabbix
+Security & FinOps: DevSecOps, implementation of information security systems
+Scripting: Bash, Python (basic)
+Databases: PostgreSQL, Tarantool
+Message Brokers: RabbitMQ, Kafka
+Version Control: Git, Bitbucket
+Repositories: Nexus, Artifactory JFrog
+Virtualization: Proxmox, VMware, Citrix, Hyper-V
+Tracking & Collaboration: Jira, Yandex Tracker, Confluence, Notion
+Network: MikroTik, SSH
+Methodologies: Agile, Kanban
+
+EXPERIENCE
+
+Lead DevOps Engineer — USETECH
+Moscow · November 2021 – April 2023 (1 year 6 months)
+• Responsible for building and maintaining infrastructure as code using Terraform and Ansible.
+• Configured and maintained CI/CD: Jenkins and GitLab CI/CD.
+• Deployed and managed containerized applications in Kubernetes.
+• Implemented monitoring and alerting with Prometheus and Grafana.
+• Automated routine operational tasks to improve efficiency and reduce risks.
+• Prepared and maintained documentation, deployment instructions, technical guides, and project reports.
+• Provided training and support on DevOps practices and tools.
+• Implemented and supported CI/CD processes across the department or company.
+• Scaled server infrastructure.
+• Developed strategies to ensure fault tolerance and scalability of systems.
+
+Lead DevOps Engineer — Servionica LLC
+www.servionica.ru · September 2016 – November 2021 (5 years 3 months)
+• Consulted teams.
+• Diagnosed and resolved CI/CD issues.
+• Wrote deployment scripts.
+• Configured F7 load balancing.
+• Wrote instructions and drew diagrams.
+• Participated in discussions and subsequent implementation of integrations and new technical solutions.
+
+EDUCATION
+Higher Education — Samara State Aerospace University named after S.P. Korolev
+Informatics, Comprehensive Information Security Support of Automated Systems · 2011
+
+Higher Education — Samara Mechanical-Technological College
+Informatics, diploma · 2006
+
+CERTIFICATIONS / PROFESSIONAL DEVELOPMENT
+Mikrotik CCNA — Mikrotik-courses, 2019
+MTCNA — Mikrotik, MTCNA, 2018
+
+COMMUNITY & PUBLIC ACTIVITY
+Telegram channel DevOps_DIY — author
+YouTube channel about IT trends, open-source, and practical cases — author
+
+ADDITIONAL INFORMATION
+About me: My name is Evgeny. I am a tech lead with 15+ years in IT — I started as a system administrator and grew into a DevOps engineer and architect. Currently, I help teams transition from classical development to DevOps culture: automating everything possible, implementing observability, and making infrastructure resilient.
+I am not afraid of challenges — production incidents at 3 AM (and preventing them) are routine for me, a routine I aim to minimize through automation and observability.
+Besides my main job, I run the Telegram channel DevOps_DIY and a YouTube channel about IT trends, open-source, and practical cases. I love sharing knowledge and learning new things — it helps me stay sharp.
+I would be glad to discuss how my experience can strengthen your team and infrastructure. Always in touch.

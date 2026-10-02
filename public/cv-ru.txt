@@ -1,0 +1,71 @@
+Kiselev Evgeny Aleksandrovich
+DevOps Engineer / Lead DevOps Engineer
+Москва · ekdeus@yandex.ru · github.com/ek-deus · t.me/DevOps_DIY
+
+SUMMARY
+DevOps-инженер / техлид с 15+ годами в ИТ. Начинал системным администратором, вырос до DevOps-инженера и архитектора. Помогаю командам переходить от классической разработки к DevOps-культуре: автоматизирую всё, что можно, внедряю observability и делаю инфраструктуру отказоустойчивой.
+Практический опыт: Infrastructure as Code (Terraform, Ansible), CI/CD (Jenkins, GitLab CI, TeamCity), Kubernetes / OpenShift, мониторинг (Prometheus, Grafana, ELK, Zabbix), виртуализация (VMware, Proxmox, Citrix, Hyper-V), Cloud (Yandex Cloud, VTBCloud, AWS).
+Не боюсь сложностей: продакшен-инциденты в 3 часа ночи и их предотвращение — рутина, которую стремлюсь свести к минимуму через автоматизацию и observability.
+Веду Telegram-канал DevOps_DIY и YouTube-канал про ИТ-тренды, open-source и практические кейсы.
+
+SKILLS
+Cloud: Yandex Cloud, VTBCloud, AWS
+IaC & Automation: Terraform, Ansible, Helm, Werf
+Containers & Orchestration: Docker, Kubernetes, OpenShift, Docker Swarm, ArgoCD
+CI/CD: Jenkins, GitLab CI/CD, TeamCity
+Observability: Prometheus + Grafana, ELK, Zabbix
+Security & FinOps: DevSecOps, внедрение систем информационной безопасности
+Scripting: Bash, Python (базово)
+Databases: PostgreSQL, Tarantool
+Message Brokers: RabbitMQ, Kafka
+Version Control: Git, Bitbucket
+Repositories: Nexus, Artifactory JFrog
+Virtualization: Proxmox, VMware, Citrix, Hyper-V
+Tracking & Collaboration: Jira, Yandex Tracker, Confluence, Notion
+Network: MikroTik, SSH
+Methodologies: Agile, Kanban
+
+EXPERIENCE
+
+Ведущий инженер DevOps — USETECH
+Москва · Ноябрь 2021 – Апрель 2023 (1 год 6 месяцев)
+• Ответственность за создание и поддержку инфраструктуры как кода с использованием Terraform и Ansible.
+• Настройка и поддержка CI/CD: Jenkins и GitLab CI/CD.
+• Развёртывание и управление контейнеризированными приложениями в Kubernetes.
+• Внедрение мониторинга и алертинга с использованием Prometheus и Grafana.
+• Автоматизация рутинных операционных задач для повышения эффективности и снижения рисков.
+• Подготовка и ведение документации, инструкций по развёртыванию, технических руководств и отчётов о проектах.
+• Обучение и поддержка по вопросам DevOps-практик и инструментов.
+• Внедрение и поддержка CI/CD процессов в направлении или компании.
+• Масштабирование серверной инфраструктуры.
+• Разработка стратегий для обеспечения отказоустойчивости и масштабируемости систем.
+
+Ведущий инженер DevOps — ООО Серионика
+www.servionica.ru · Сентябрь 2016 – Ноябрь 2021 (5 лет 3 месяца)
+• Консультация команд.
+• Диагностика и устранение неполадок CI/CD.
+• Написание скриптов деплоя.
+• Настройка балансировки F7.
+• Написание инструкций и зарисовка схем.
+• Участие в обсуждении и последующей реализации интеграций и новых технических решений.
+
+EDUCATION
+Высшее — Самарский государственный аэрокосмический университет им. С.П. Королёва
+Информатика, Комплексное обеспечение информационной безопасности автоматизированных систем · 2011
+
+Высшее — Самарский механико-технологический колледж
+Информатика, диплом · 2006
+
+CERTIFICATIONS / ПОВЫШЕНИЕ КВАЛИФИКАЦИИ
+Mikrotik CCNA — Mikrotik-courses, 2019
+MTCNA — Mikrotik, MTCNA, 2018
+
+COMMUNITY & PUBLIC ACTIVITY
+Telegram-канал DevOps_DIY — автор
+YouTube-канал про ИТ-тренды, open-source и практические кейсы — автор
+
+ADDITIONAL INFORMATION
+Обо мне: Меня зовут Евгений. Я техлид с 15+ годами в ИТ — начинал системным администратором, дорос до DevOps-инженера и архитектора. Сейчас я занимаюсь тем, что помогаю командам переходить от классической разработки к DevOps-культуре: автоматизирую всё, что можно, внедряю observability и делаю инфраструктуру отказоустойчивой.
+Я не боюсь сложностей — для меня продакшен-инциденты в 3 часа ночи (и их предотвращение) — это рутина, которую я стремлюсь свести к минимуму через автоматизацию и observability.
+Помимо основной работы, веду Telegram-канал DevOps_DIY и YouTube-канал про ИТ-тренды, open-source и практические кейсы. Люблю делиться знаниями и учиться новому — это помогает оставаться в тонусе.
+Буду рад обсудить, как мой опыт может усилить вашу команду и инфраструктуру. На связи всегда.
