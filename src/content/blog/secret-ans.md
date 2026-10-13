@@ -87,7 +87,7 @@ deploy:
 
 ### Подход 3 (бонус): HashiCorp Vault / AWS Secrets Manager как backend
 
-Для enterprise-уровня — Ansible читает секреты напрямую из внешнего vault:
+Для enterprise-уровня - Ansible читает секреты напрямую из внешнего vault:
 
 ```yaml
 - name: Get DB password from HashiCorp Vault
@@ -96,7 +96,7 @@ deploy:
   no_log: true
 ```
 
-Токен для доступа к Vault — единственная переменная, которую нужно передать через CI/CD Secrets.
+Токен для доступа к Vault - единственная переменная, которую нужно передать через CI/CD Secrets.
 
 ---
 
@@ -143,17 +143,17 @@ callback_whitelist = yaml
 **GitHub Actions:**
 ```yaml
 # Секреты автоматически маскируются в логах
-# Но если выведешь их через echo — будут видны
+# Но если выведешь их через echo - будут видны
 - run: echo "$SECRET"   # ← ПЛОХО, GitHub замаскирует, но лучше не рисковать
 ```
 
 #### 5. Отключаем `--verbose` в продакшене
 
 ```bash
-# ❌ ПЛОХО — в verbose-режиме могут выводиться значения переменных
+# ❌ ПЛОХО - в verbose-режиме могут выводиться значения переменных
 ansible-playbook site.yml -vvv
 
-# ✅ ХОРОШО — минимальный вывод
+# ✅ ХОРОШО - минимальный вывод
 ansible-playbook site.yml
 # Или:
 ANSIBLE_STDOUT_CALLBACK=minimal ansible-playbook site.yml
@@ -162,7 +162,7 @@ ANSIBLE_STDOUT_CALLBACK=minimal ansible-playbook site.yml
 #### 6. Фильтрация логов на уровне CI/CD
 
 ```yaml
-# GitLab CI — можно использовать after_script для очистки
+# GitLab CI - можно использовать after_script для очистки
 deploy:
   script:
     - ansible-playbook site.yml 2>&1 | tee deploy.log
@@ -190,6 +190,6 @@ deploy:
 
 Это даёт:
 - ✅ Секреты версионируются (в зашифрованном виде)
-- ✅ Пароль от vault — одна короткая строка в CI/CD
+- ✅ Пароль от vault - одна короткая строка в CI/CD
 - ✅ Даже если кто-то забудет `no_log`, маскирование в CI/CD подстрахует
 - ✅ Легко ротировать: пересоздал vault-файл с новым паролем → обновил секрет в CI/CD

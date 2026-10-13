@@ -11,7 +11,7 @@ heroImage: ''
 
 ---
 
-## 1. Первоочередная диагностика (Triage) — 4 команды по SSH
+## 1. Первоочередная диагностика (Triage) - 4 команды по SSH
 
 Предполагаем, что etcd запущен как static pod (стандарт kubeadm). Сертификаты лежат в `/etc/kubernetes/pki/etcd/`. Задаём алиас, чтобы не повторять флаги:
 
@@ -22,7 +22,7 @@ heroImage: ''
 crictl ps -a --name etcd
 # (или `docker ps -a | grep etcd` на старых кластерах)
 
-# ② Здоровье эндпоинтов и размер БД — самая информативная команда
+# ② Здоровье эндпоинтов и размер БД - самая информативная команда
 ETCDCTL_API=3 etcdctl \
   --cert=/etc/kubernetes/pki/etcd/server.crt \
   --key=/etc/kubernetes/pki/etcd/server.key \
@@ -38,7 +38,7 @@ ETCDCTL_API=3 etcdctl \
   --endpoints=https://127.0.0.1:2379 \
   member list -w table
 
-# ④ Дисковое пространство — критично при "database space exceeded"
+# ④ Дисковое пространство - критично при "database space exceeded"
 df -h /var/lib/etcd && du -sh /var/lib/etcd/member/snap/db
 ```
 
@@ -53,7 +53,7 @@ df -h /var/lib/etcd && du -sh /var/lib/etcd/member/snap/db
 
 ---
 
-## 2. Анализ симптомов — почему кластер мёртв
+## 2. Анализ симптомов - почему кластер мёртв
 
 ### Корневая причина: `database space exceeded`
 
@@ -85,7 +85,7 @@ etcd по умолчанию имеет **квоту backend = 2 ГБ** (`--quot
 
 1. **NOSPACE блокирует любую запись.** При старте etcd на master-1 должен синхронизировать Raft-лог с лидером. Но лидер не может записать *ни одной* новой записи (включая записи о синхронизации), потому что alarm NOSPACE активен на master-2/3.
 
-2. **Snapshot transfer невозможен.** Если master-1 сильно отстал, лидер должен отправить ему snapshot. Но snapshot — это тоже операция, требующая записи в Raft-лог (для фиксации факта отправки). Лог заблокирован → snapshot не уходит → master-1 висит в `unstarted` или циклически рестартует.
+2. **Snapshot transfer невозможен.** Если master-1 сильно отстал, лидер должен отправить ему snapshot. Но snapshot - это тоже операция, требующая записи в Raft-лог (для фиксации факта отправки). Лог заблокирован → snapshot не уходит → master-1 висит в `unstarted` или циклически рестартует.
 
 3. **Возможное повреждение WAL.** Если перезагрузка master-1 была нечистой (hard reset), его WAL-файлы (`/var/lib/etcd/member/wal/`) могут быть повреждены. etcd при старте не может прочитать собственный лог → crash loop.
 
@@ -94,7 +94,7 @@ etcd по умолчанию имеет **квоту backend = 2 ГБ** (`--quot
 Это **замкнутый круг Raft при NOSPACE**:
 
 - Кандидат выигрывает выборы → становится лидером → пытается записать `noop`-запись в Raft-лог (обязательный шаг по Raft-протоколу для подтверждения лидерства) → **запись отклонена** (NOSPACE) → лидерство не подтверждено → через election timeout (1–5 сек) начинается новый раунд выборов.
-- `leader changed каждые 5-10 секунд` — это прямое следствие: выборы проходят, но лидерство не удерживается.
+- `leader changed каждые 5-10 секунд` - это прямое следствие: выборы проходят, но лидерство не удерживается.
 
 ---
 
@@ -103,7 +103,7 @@ etcd по умолчанию имеет **квоту backend = 2 ГБ** (`--quot
 ### Фаза 0: Подготовка и фиксация состояния
 
 ```bash
-# На ВСЕХ master-нодах — сохранить текущее состояние для постмортема
+# На ВСЕХ master-нодах - сохранить текущее состояние для постмортема
 mkdir -p /root/etcd-recovery-$(date +%F)
 cp -a /var/lib/etcd /root/etcd-recovery-$(date +%F)/etcd-backup-$(hostname)
 journalctl -u kubelet --since "2 hours ago" > /root/etcd-recovery-$(date +%F)/kubelet.log
@@ -152,7 +152,7 @@ etcdctl alarm list
 etcdctl endpoint health --cluster
 ```
 
-Если `endpoint health` показывает `healthy` на 2 из 3 нод — **кворум восстановлен**, переходим к очистке.
+Если `endpoint health` показывает `healthy` на 2 из 3 нод - **кворум восстановлен**, переходим к очистке.
 
 ### Фаза 3: Очистка БД (compact + defrag)
 
@@ -174,7 +174,7 @@ etcdctl endpoint status --cluster -w table
 
 ### Фаза 4: Вернуть master-1 в кластер
 
-**Сценарий А — master-1 жив, но не синхронизирован:**
+**Сценарий А - master-1 жив, но не синхронизирован:**
 
 ```bash
 # На master-1: убедиться, что manifest тоже обновлён с новой квотой
@@ -188,7 +188,7 @@ etcdctl member list -w table
 etcdctl endpoint health --cluster
 ```
 
-**Сценарий Б — master-1 повреждён и не стартует:**
+**Сценарий Б - master-1 повреждён и не стартует:**
 
 ```bash
 # На master-1:
@@ -245,7 +245,7 @@ etcdctl snapshot save /tmp/etcd-snapshot.db
 # 2. Остановить etcd на ВСЕХ нодах
 mv /etc/kubernetes/manifests/etcd.yaml /tmp/   # на каждой
 
-# 3. На master-2 — восстановить как single-node cluster
+# 3. На master-2 - восстановить как single-node cluster
 rm -rf /var/lib/etcd
 etcdctl snapshot restore /tmp/etcd-snapshot.db \
   --name=master-2 \
@@ -257,7 +257,7 @@ etcdctl snapshot restore /tmp/etcd-snapshot.db \
 # 4. Вернуть manifest (с новой квотой!) и дождаться старта
 mv /tmp/etcd.yaml /etc/kubernetes/manifests/etcd.yaml
 
-# 5. После поднятия single-node — добавить master-1 и master-3
+# 5. После поднятия single-node - добавить master-1 и master-3
 #    через member add + запуск с --initial-cluster-state=existing
 ```
 
@@ -271,4 +271,4 @@ alarm disarm → compact → defrag → вернуть master-1 →
 проверить API → 🎉
 ```
 
-> **Главный вывод:** в 90% случаев `database space exceeded` лечится увеличением `--quota-backend-bytes` и последующей дефрагментацией. Полное пересоздание кластера — это крайняя мера, когда данные физически повреждены.
+> **Главный вывод:** в 90% случаев `database space exceeded` лечится увеличением `--quota-backend-bytes` и последующей дефрагментацией. Полное пересоздание кластера - это крайняя мера, когда данные физически повреждены.

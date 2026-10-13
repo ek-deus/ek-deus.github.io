@@ -12,7 +12,7 @@ heroImage: ''
 
 Краткий ответ
 
-Namespaces изолируют видимость ресурсов (процессы, сеть, ФС, пользователи — каждый контейнер видит только своё). Cgroups ограничивают потребление ресурсов (CPU, RAM, I/O, PID). Контейнер = namespace + cgroup + union FS. Отличие от VM: контейнеры делят ядро хоста
+Namespaces изолируют видимость ресурсов (процессы, сеть, ФС, пользователи - каждый контейнер видит только своё). Cgroups ограничивают потребление ресурсов (CPU, RAM, I/O, PID). Контейнер = namespace + cgroup + union FS. Отличие от VM: контейнеры делят ядро хоста
 
 **Linux Namespaces** (что видит процесс):
 
@@ -27,10 +27,10 @@ Namespaces изолируют видимость ресурсов (процес�
 
 **cgroups** (сколько может потребить):
 
-- CPU: `cpu.shares`, `cpu.cfs_quota_us` — ограничение + приоритет
-- Memory: `memory.limit_in_bytes` — при превышении → OOM kill
-- I/O: `blkio` (v1) / `io` (v2) — квоты на r/w
-- PID: `pids.max` — лимит форков (защита от fork bomb)
+- CPU: `cpu.shares`, `cpu.cfs_quota_us` - ограничение + приоритет
+- Memory: `memory.limit_in_bytes` - при превышении → OOM kill
+- I/O: `blkio` (v1) / `io` (v2) - квоты на r/w
+- PID: `pids.max` - лимит форков (защита от fork bomb)
 
 В v2 единая иерархия вместо отдельных контроллеров v1.
 
@@ -50,7 +50,7 @@ Kubernetes лимиты (`limits.cpu`, `limits.memory`) транслируют�
 
 - Namespaces = изоляция видимости; cgroups = ограничение ресурсов
 - 6 типов namespace: pid, net, mnt, uts, ipc, user
-- cgroups v2 — единая иерархия, предпочтительна в современных системах
+- cgroups v2 - единая иерархия, предпочтительна в современных системах
 - Контейнеры делят ядро → CVE в ядре = риск для всех контейнеров на хосте
 - Kubernetes limits → cgroup cfs_quota_us; CPU throttling при превышении
 
