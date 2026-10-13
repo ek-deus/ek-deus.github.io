@@ -1,7 +1,7 @@
 ---
 title: 'Netplan: продвинутая настройка сети (туннели, VLAN, мосты, bonding)'
 description: 'Практическое руководство по утилите Netplan'
-pubDate: '2026-10-08'
+pubDate: '2026-10-09'
 tags: ['Netplan', 'DevOps', 'linux', 'monitoring']
 heroImage: ''
 ---
