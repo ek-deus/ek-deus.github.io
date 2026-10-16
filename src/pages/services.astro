@@ -26,18 +26,83 @@ const services = [
     details: [['Срок', 'от 2 часов до 1 рабочего дня'], ['Деплой', 'Docker Compose'], ['Доступ', "HTTPS с Let's Encrypt или через VPN"]],
     tags: [['#self-hosted', 'https://bigmike.help/ru/tags/self-hosted/'], ['#nextcloud', 'https://bigmike.help/ru/tags/nextcloud/'], ['#immich', 'https://bigmike.help/ru/tags/immich/'], ['#pi-hole', 'https://bigmike.help/ru/tags/pi-hole/'], ['#truenas', 'https://bigmike.help/ru/tags/truenas/'], ['#homelab', 'https://bigmike.help/ru/tags/homelab/'], ['#docker', 'https://bigmike.help/ru/tags/docker/']],
   },
+  {
+    id: 'cicd',
+    number: '03',
+    title: 'Настройка CI/CD',
+    price: 'от 15 000 RUB',
+    priceNote: 'за проект',
+    intro: 'Настрою CI/CD-пайплайн: после каждого коммита код автоматически тестируется, собирается в Docker-образ и деплоится на сервер.',
+    description: 'Больше никаких ручных ssh + git pull + docker restart. Меньше ошибок, быстрее релизы. Работаю с GitHub Actions и GitLab CI. Для деплоя использую Kamal или Docker Compose — в зависимости от стека.',
+    requirements: ['Репозиторий на GitHub или GitLab', 'Сервер с SSH-доступом', 'Описание стека и текущего процесса деплоя'],
+    includes: ['Настройка GitHub Actions или GitLab CI под ваш проект', 'Автоматическая сборка Docker-образов и публикация в registry', 'Деплой на сервер при пуше в main/master или по тегу', 'Прогон тестов и линтеров в pipeline', 'Настройка окружений: dev, staging, production', 'Kamal или Docker Compose для zero-downtime деплоя'],
+    details: [['Срок', 'от 1 до 3 рабочих дней'], ['Платформы', 'GitHub Actions, GitLab CI, Gitea Actions'], ['Деплой', 'Kamal, Docker Compose, SSH-деплой']],
+    tags: [['#cicd', 'https://bigmike.help/ru/tags/cicd/'], ['#devops', 'https://bigmike.help/ru/tags/devops/'], ['#github-actions', 'https://bigmike.help/ru/tags/github-actions/'], ['#gitlab-ci', 'https://bigmike.help/ru/tags/gitlab-ci/'], ['#docker', 'https://bigmike.help/ru/tags/docker/'], ['#deployment', 'https://bigmike.help/ru/tags/deployment/'], ['#automation', 'https://bigmike.help/ru/tags/automation/']],
+  },
+  {
+    id: 'keycloak-sso',
+    number: '04',
+    title: 'Настройка Keycloak / SSO',
+    price: 'от 15 000 RUB',
+    priceNote: 'за проект',
+    intro: 'Настрою Keycloak — корпоративное решение для управления идентификацией и единого входа (SSO).',
+    description: 'Один логин для внутренних сервисов: Nextcloud, Grafana, внутренних дашбордов и VPN. Поддержка MFA, LDAP и Active Directory. Подойдёт командам от 5 человек, которые устали раздавать пароли от каждого сервиса отдельно.',
+    requirements: ['VPS с минимум 2 ГБ RAM', 'Список приложений для подключения к SSO', 'Описание текущей системы авторизации, если она есть'],
+    includes: ['Установка и настройка Keycloak на вашем сервере через Docker', 'Настройка OAuth2 / OpenID Connect для приложений', 'Single Sign-On: один логин для всех внутренних сервисов', 'Интеграция с LDAP / Active Directory', 'Настройка MFA — двухфакторной аутентификации', 'Интеграция с OpenVPN, Nextcloud, Grafana и другими сервисами'],
+    details: [['Срок', 'от 1 до 3 рабочих дней'], ['Деплой', 'Docker Compose'], ['Версия', 'Keycloak 24+']],
+    tags: [['#keycloak', 'https://bigmike.help/ru/tags/keycloak/'], ['#sso', 'https://bigmike.help/ru/tags/sso/'], ['#authentication', 'https://bigmike.help/ru/tags/authentication/'], ['#oauth2', 'https://bigmike.help/ru/tags/oauth2/'], ['#oidc', 'https://bigmike.help/ru/tags/oidc/'], ['#security', 'https://bigmike.help/ru/tags/security/'], ['#identity', 'https://bigmike.help/ru/tags/identity/']],
+  },
+  {
+    id: 'consulting',
+    number: '05',
+    title: 'IT-консультации и менторство',
+    price: 'от 5 000 RUB',
+    priceNote: 'в час',
+    intro: 'Провожу IT-консультации и менторские сессии для специалистов и команд.',
+    description: 'Помогаю разобраться в сложных технических вопросах, оптимизировать инфраструктуру, повысить стабильность и безопасность систем. Разберём DevOps, CI/CD, архитектуру инфраструктуры, автоматизацию рутины или профессиональный рост. Отвечаю на конкретные вопросы, объясняю решения и при необходимости сопровождаю внедрение.',
+    requirements: ['Краткое описание запроса или цели консультации', 'Примеры текущей инфраструктуры, кода или проблемных зон — при наличии'],
+    includes: ['Индивидуальные консультации по DevOps, сетям и безопасности', 'Разбор инфраструктуры и оптимизация CI/CD', 'Помощь в развитии карьеры и профессиональных навыков', 'Наставничество для начинающих и middle-инженеров', 'Помощь при переходе на новую роль или проект'],
+    details: [['Формат', 'онлайн: Zoom, Telegram, Meet'], ['Длительность', '60 минут'], ['Темы', 'DevOps, Linux, Docker, CI/CD, сети, безопасность, карьера'], ['Кому подойдёт', 'инженерам, разработчикам, тимлидам, основателям IT-проектов']],
+    tags: [['#consulting', 'https://bigmike.help/ru/tags/consulting/'], ['#mentorship', 'https://bigmike.help/ru/tags/mentorship/'], ['#it', 'https://bigmike.help/ru/tags/it/'], ['#devops', 'https://bigmike.help/ru/tags/devops/'], ['#career', 'https://bigmike.help/ru/tags/career/']],
+  },
+  {
+    id: 'windows-server-yandex-cloud',
+    number: '06',
+    title: 'Развёртывание серверов в облаках',
+    price: 'от 10 000 RUB',
+    priceNote: 'за проект',
+    intro: 'Разверну и настрою сервер под вашу задачу в Яндекс Облаке или другом IaaS-провайдере.',
+    description: 'Подберу конфигурацию виртуальной машины, подготовлю операционную систему, безопасный доступ и базовые сервисы. Подходит для Linux- и Windows-серверов, тестовых и production-окружений.',
+    requirements: ['Учётная запись в выбранном облаке', 'Бюджет на использование облачных ресурсов', 'Технические требования: операционная система, ядра, RAM, диски и назначение сервера'],
+    includes: ['Создание и базовая настройка виртуальной машины', 'Установка и настройка Linux или Windows Server', 'Безопасная настройка SSH или RDP-доступа и учётных записей', 'Базовая настройка ролей и служб: AD, DNS, DHCP — по запросу', 'Оптимизация сетевых правил и подготовка сервера к эксплуатации'],
+    details: [['Срок', 'от 1 рабочего дня'], ['Операционные системы', 'Linux и Windows Server'], ['Облака', 'Yandex Cloud, AWS, Google Cloud, Microsoft Azure, Hetzner, DigitalOcean, Selectel, VK Cloud и другие IaaS-провайдеры']],
+    tags: [['#cloud', 'https://bigmike.help/ru/tags/iaas/'], ['#server', 'https://bigmike.help/ru/tags/server/'], ['#windows', 'https://bigmike.help/ru/tags/windows/'], ['#linux', 'https://bigmike.help/ru/tags/linux/'], ['#iaas', 'https://bigmike.help/ru/tags/iaas/'], ['#яндекс-облако', 'https://bigmike.help/ru/tags/%D1%8F%D0%BD%D0%B4%D0%B5%D0%BA%D1%81-%D0%BE%D0%B1%D0%BB%D0%B0%D0%BA%D0%BE/']],
+  },
+  {
+    id: 'kubernetes',
+    number: '07',
+    title: 'Развёртывание Kubernetes-кластеров',
+    price: 'от 10 000 RUB',
+    priceNote: 'за проект',
+    intro: 'Разверну и подготовлю к эксплуатации Kubernetes-кластер под вашу инфраструктуру и нагрузку.',
+    description: 'Работаю с любыми вариантами размещения: bare metal, облачные managed-кластеры и self-hosted инфраструктура. Подберу схему, настрою базовые компоненты и подготовлю понятный путь для дальнейшей эксплуатации.',
+    requirements: ['Описание задач, нагрузки и требований к доступности', 'Сведения об инфраструктуре: серверы, облако или существующее окружение', 'Доступы к облаку или серверам для развёртывания'],
+    includes: ['Подбор архитектуры и способа развёртывания кластера', 'Установка и настройка Kubernetes на bare metal, в облаке или self-hosted среде', 'Настройка сети, ingress, storage и базовых политик доступа', 'Подключение мониторинга и базовой наблюдаемости', 'Подготовка документации по доступу и эксплуатации'],
+    details: [['Срок', 'зависит от состава инфраструктуры и требований'], ['Размещение', 'bare metal, облака, self-hosted'], ['Варианты', 'managed Kubernetes и self-managed кластеры']],
+    tags: [['#kubernetes', 'https://bigmike.help/ru/tags/kubernetes/'], ['#devops', 'https://bigmike.help/ru/tags/devops/'], ['#cloud', 'https://bigmike.help/ru/tags/iaas/'], ['#bare-metal', 'https://bigmike.help/ru/tags/bare-metal/'], ['#self-hosted', 'https://bigmike.help/ru/tags/self-hosted/']],
+  },
 ];
 ---
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Услуги Евгения Киселёва: настройка MikroTik и развёртывание self-hosted сервисов.">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Услуги Евгения Киселёва: сети, self-hosted сервисы, CI/CD, SSO и инфраструктура.">
   <title>Услуги · Евгений Киселёв</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/styles.css">
 </head>
 <body class="services-page"><main class="services-shell">
   <a class="back-link" href="/">← На главную</a>
-  <header class="services-header"><p class="section-number">Услуги / инфраструктура и сети</p><h1>Помогу системе<br><em>работать лучше.</em></h1><p>Практические услуги по сетевой инфраструктуре и self-hosted сервисам. Беру задачу от диагностики до проверенного результата и документации.</p></header>
+  <header class="services-header"><p class="section-number">Услуги / инфраструктура и сети</p><h1>Помогу системе<br><em>работать лучше.</em></h1><p>Практические услуги по сетевой инфраструктуре и self-hosted сервисам. Беру задачу от диагностики до проверенного результата и документации.</p><aside class="services-kubernetes-note"><span>Kubernetes</span><p>Разворачиваю и сопровождаю Kubernetes-кластеры в любых вариантах: bare metal, облака и self-hosted инфраструктура. Стоимость — от 10 000 RUB за проект.</p></aside></header>
   <div class="service-list">{services.map((service) => <article class="service-card" id={service.id}>
     <header class="service-card-header"><p class="section-number">{service.number} / Услуга</p><div class="service-price"><strong>{service.price}</strong><span>{service.priceNote}</span></div><h2>{service.title}</h2><p class="service-intro">{service.intro}</p><p class="service-description">{service.description}</p><a class="service-cta" href={`mailto:ekdeus@yandex.ru?subject=${encodeURIComponent(`Услуга: ${service.title}`)}`}>Обсудить задачу <span>↗</span></a></header>
     <div class="service-grid"><section><h3>Нужно для заказа</h3><ul>{service.requirements.map((item) => <li>{item}</li>)}</ul></section><section><h3>Услуга включает</h3><ul>{service.includes.map((item) => <li>{item}</li>)}</ul></section></div>
