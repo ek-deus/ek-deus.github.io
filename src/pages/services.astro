@@ -1,0 +1,48 @@
+---
+const services = [
+  {
+    id: 'mikrotik',
+    number: '01',
+    title: 'Настройка MikroTik',
+    price: '8 000 RUB',
+    priceNote: 'за проект',
+    intro: 'Настрою, оптимизирую или починю сеть на базе MikroTik RouterOS.',
+    description: 'Помогаю как с базовой конфигурацией домашнего роутера, так и со сложными корпоративными задачами: многосайтовые VPN, динамическая маршрутизация BGP/OSPF, публикация HTTPS-сервисов через встроенный Reverse Proxy. Работаю удалённо через WinBox или SSH — в большинстве случаев достаточно 1–2 часов. Если у вас уже есть конфигурация — проведу аудит и укажу на проблемные места.',
+    requirements: ['Модель устройства и версия RouterOS', 'Описание задачи или текущей проблемы', 'Доступ к роутеру: WinBox, SSH или Telnet'],
+    includes: ['Первоначальная настройка роутера MikroTik с нуля', 'Настройка файрвола и правил безопасности', 'Поднятие VPN: WireGuard, OpenVPN, IPsec, PPTP', 'Настройка Reverse Proxy (RouterOS 7.22+) для публикации внутренних сервисов', 'Маршрутизация: BGP, OSPF, Policy Routing, ECMP', 'Настройка VLAN, мостов, DHCP и DNS', 'Диагностика и исправление проблем с сетью'],
+    details: [['Срок', 'от 1 часа до 1 рабочего дня'], ['Формат', 'удалённо: WinBox, SSH; выезд: Москва'], ['Оборудование', 'RouterBOARD, CCR, hAP, hEX, RB5009 и другие модели MikroTik'], ['RouterOS', 'версии 6.x и 7.x']],
+    tags: [['#mikrotik', 'https://bigmike.help/ru/tags/mikrotik/'], ['#routeros', 'https://bigmike.help/ru/tags/routeros/'], ['#networking', 'https://bigmike.help/ru/tags/networking/'], ['#vpn', 'https://bigmike.help/ru/tags/vpn/'], ['#firewall', 'https://bigmike.help/ru/tags/firewall/'], ['#reverse-proxy', 'https://bigmike.help/ru/tags/reverse-proxy/']],
+  },
+  {
+    id: 'self-hosted',
+    number: '02',
+    title: 'Развёртывание self-hosted сервисов',
+    price: '8 000 RUB',
+    priceNote: 'за проект',
+    intro: 'Разверну self-hosted аналог облачного сервиса на вашем сервере или NAS.',
+    description: 'Вы получаете полный контроль над данными, без ежемесячных подписок и зависимости от сторонних облаков. Всё работает по HTTPS с нормальным доменом. Если не знаете, что именно нужно — подскажу, какой инструмент лучше подходит под вашу задачу.',
+    requirements: ['VPS, домашний сервер или NAS с Linux', 'Описание нужного сервиса и задачи'],
+    includes: ['Nextcloud — личное облако вместо Google Drive или Яндекс Диска', 'Immich — приватный Google Photos с AI-поиском', 'Pi-hole или AdGuard Home — блокировка рекламы на уровне DNS для всей сети', 'Vaultwarden — самостоятельный Bitwarden для хранения паролей', 'TrueNAS — домашнее или офисное NAS-хранилище', 'Настройка HTTPS, домена и удалённого доступа через VPN'],
+    details: [['Срок', 'от 2 часов до 1 рабочего дня'], ['Деплой', 'Docker Compose'], ['Доступ', "HTTPS с Let's Encrypt или через VPN"]],
+    tags: [['#self-hosted', 'https://bigmike.help/ru/tags/self-hosted/'], ['#nextcloud', 'https://bigmike.help/ru/tags/nextcloud/'], ['#immich', 'https://bigmike.help/ru/tags/immich/'], ['#pi-hole', 'https://bigmike.help/ru/tags/pi-hole/'], ['#truenas', 'https://bigmike.help/ru/tags/truenas/'], ['#homelab', 'https://bigmike.help/ru/tags/homelab/'], ['#docker', 'https://bigmike.help/ru/tags/docker/']],
+  },
+];
+---
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Услуги Евгения Киселёва: настройка MikroTik и развёртывание self-hosted сервисов.">
+  <title>Услуги · Евгений Киселёв</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/styles.css">
+</head>
+<body class="services-page"><main class="services-shell">
+  <a class="back-link" href="/">← На главную</a>
+  <header class="services-header"><p class="section-number">Услуги / инфраструктура и сети</p><h1>Помогу системе<br><em>работать лучше.</em></h1><p>Практические услуги по сетевой инфраструктуре и self-hosted сервисам. Беру задачу от диагностики до проверенного результата и документации.</p></header>
+  <div class="service-list">{services.map((service) => <article class="service-card" id={service.id}>
+    <header class="service-card-header"><p class="section-number">{service.number} / Услуга</p><div class="service-price"><strong>{service.price}</strong><span>{service.priceNote}</span></div><h2>{service.title}</h2><p class="service-intro">{service.intro}</p><p class="service-description">{service.description}</p><a class="service-cta" href={`mailto:ekdeus@yandex.ru?subject=${encodeURIComponent(`Услуга: ${service.title}`)}`}>Обсудить задачу <span>↗</span></a></header>
+    <div class="service-grid"><section><h3>Нужно для заказа</h3><ul>{service.requirements.map((item) => <li>{item}</li>)}</ul></section><section><h3>Услуга включает</h3><ul>{service.includes.map((item) => <li>{item}</li>)}</ul></section></div>
+    <dl class="service-details">{service.details.map(([term, value]) => <div><dt>{term}</dt><dd>{value}</dd></div>)}</dl>
+    <div class="service-tags" aria-label={`Теги услуги «${service.title}»`}>{service.tags.map(([label, href]) => <a href={href} target="_blank" rel="noreferrer">{label}</a>)}</div>
+  </article>)}</div>
+  <footer><span>© 2026 Евгений Киселёв</span><span>Новые услуги — скоро</span></footer>
+</main></body></html>
