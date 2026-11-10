@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 410" role="img" aria-labelledby="title desc">
+  <title id="title">Как выбрать между RabbitMQ и Kafka</title>
+  <desc id="desc">Выбирайте RabbitMQ для маршрутизируемых рабочих очередей и управления доставкой. Выбирайте Kafka для долговечного потока, независимых групп потребителей и повторного чтения. Можно использовать оба при оправданной операционной цене.</desc>
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#101b35"/><stop offset="1" stop-color="#1b2e49"/></linearGradient><linearGradient id="or" x2="1"><stop stop-color="#ffab5d"/><stop offset="1" stop-color="#ff7138"/></linearGradient><linearGradient id="bl" x2="1"><stop stop-color="#48a4ff"/><stop offset="1" stop-color="#586eff"/></linearGradient></defs>
+  <rect width="1200" height="410" rx="28" fill="#111d35"/>
+  <text x="600" y="54" fill="#f4f7ff" font-family="Arial,sans-serif" font-size="28" font-weight="700" text-anchor="middle">ВЫБИРАЙТЕ ПО МОДЕЛИ РАБОТЫ</text>
+  <rect x="42" y="92" width="440" height="250" rx="22" fill="#292b37" stroke="#ff9347" stroke-width="2"/>
+  <rect x="718" y="92" width="440" height="250" rx="22" fill="#202b48" stroke="#528bff" stroke-width="2"/>
+  <rect x="74" y="116" width="190" height="42" rx="21" fill="#ff9347"/><text x="169" y="144" fill="#311a0b" font-family="Arial,sans-serif" font-size="20" font-weight="700" text-anchor="middle">RabbitMQ</text>
+  <text x="74" y="193" fill="#fff" font-family="Arial,sans-serif" font-size="19" font-weight="700">Подходит, если нужно:</text>
+  <text x="82" y="228" fill="#ffe0c4" font-family="Arial,sans-serif" font-size="16">• маршрутизировать команды и задачи</text>
+  <text x="82" y="258" fill="#ffe0c4" font-family="Arial,sans-serif" font-size="16">• распределять работу между workers</text>
+  <text x="82" y="288" fill="#ffe0c4" font-family="Arial,sans-serif" font-size="16">• управлять ack, prefetch и retry</text>
+  <rect x="936" y="116" width="160" height="42" rx="21" fill="#528bff"/><text x="1016" y="144" fill="#111c3a" font-family="Arial,sans-serif" font-size="20" font-weight="700" text-anchor="middle">Kafka</text>
+  <text x="750" y="193" fill="#fff" font-family="Arial,sans-serif" font-size="19" font-weight="700">Подходит, если нужно:</text>
+  <text x="758" y="228" fill="#d7e4ff" font-family="Arial,sans-serif" font-size="16">• хранить поток заданное время</text>
+  <text x="758" y="258" fill="#d7e4ff" font-family="Arial,sans-serif" font-size="16">• подключить независимые группы</text>
+  <text x="758" y="288" fill="#d7e4ff" font-family="Arial,sans-serif" font-size="16">• переигрывать историю событий</text>
+  <path d="M484 215h228" stroke="#aebed4" stroke-width="2" stroke-dasharray="7 8"/><circle cx="600" cy="215" r="38" fill="#f3f6fb"/><text x="600" y="222" fill="#26344a" font-family="Arial,sans-serif" font-size="16" font-weight="700" text-anchor="middle">ИЛИ</text>
+  <text x="600" y="378" fill="#b9c7da" font-family="Arial,sans-serif" font-size="16" text-anchor="middle">Оба — если нужны обе модели и команда готова сопровождать два контура</text>
+</svg>
