@@ -1,8 +1,8 @@
 ---
-title: 'Istio Service Mesh: Полное руководство от архитектуры до деплоя'
-description: 'Istio Service Mesh: Полное руководство от архитектуры до деплоя'
-pubDate: '2024-11-19'
-tags: ['Istio', 'Service Mesh', 'DevOps', 'linux']
+title: 'Istio в Kubernetes: установка, маршрутизация трафика и mTLS'
+description: 'Практическое руководство по Istio Service Mesh в Kubernetes: установка через istioctl, канареечный деплой с VirtualService, mTLS, AuthorizationPolicy и мониторинг.'
+pubDate: '2026-11-19'
+tags: ['Istio', 'Kubernetes', 'Service Mesh', 'Envoy', 'mTLS', 'Canary Deployment', 'Prometheus', 'network', 'security', 'DevOps', 'linux']
 heroImage: ''
 ---
 
