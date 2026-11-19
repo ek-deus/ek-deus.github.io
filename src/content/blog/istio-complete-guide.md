@@ -1,7 +1,7 @@
 ---
 title: 'Istio Service Mesh: Полное руководство от архитектуры до деплоя'
 description: 'Istio Service Mesh: Полное руководство от архитектуры до деплоя'
-pubDate: '2024-11-18'
+pubDate: '2024-11-19'
 tags: ['Istio', 'Service Mesh', 'DevOps', 'linux']
 heroImage: ''
 ---
